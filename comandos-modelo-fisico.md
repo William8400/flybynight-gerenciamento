@@ -33,3 +33,10 @@ CREATE TABLE produtos(
     FOREIGN KEY (fornecedor_id) REFERENCES fornecedores(id)
 );
 ```
+
+```sql
+CREATE TABLE lojas(
+    id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    nome VARCHAR(100) NOT NULL 
+);
+```
