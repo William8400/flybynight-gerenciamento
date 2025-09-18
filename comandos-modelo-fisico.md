@@ -57,7 +57,9 @@ CREATE TABLE lojas_produtos(
     -- desta loja excluída TAMBÉM SERÃO EXCLUÍDO.
     FOREIGN KEY (loja_id)  REFERENCES  lojas(id) ON DELETE CASCADE,
 
-    FOREIGN KEY (produto_id) REFERENCES produtos(id)  
+    -- Ao tentar excluir um produto , se este produto está sendo usado em algum registro de estoque, NÃO PODEMOS PERMITIR
+    -- a exclusão! [isso j´pa é o padrão]
+    FOREIGN KEY (produto_id) REFERENCES produtos(id)  ON DELETE RESTRICT
 );
 
 ```
