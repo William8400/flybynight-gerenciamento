@@ -5,17 +5,12 @@
 
 ### Criar o banco de dados 
 
-### Criar a tabela usuarios 
-
-### Criar a tabela noticias
-
 ```sql
 
 CREATE DATABASE microblog_william CHARACTER SET utf8mb4;
 
 ```
-
-
+### Criar a tabela usuarios 
 ```sql
 
 CREATE TABLE usuarios(
@@ -25,6 +20,10 @@ CREATE TABLE usuarios(
     senha VARCHAR(255) NOT NULL,
     classificacao ENUM('admin','editor') NOT NULL
 );
+```
+### Criar a tabela noticias
+
+```sql
 
 CREATE TABLE noticias(
 
@@ -42,3 +41,6 @@ CREATE TABLE noticias(
 );
 
 ```
+
+
+
