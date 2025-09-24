@@ -17,7 +17,7 @@ CREATE TABLE usuarios(
     id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     nome VARCHAR(100) NOT NULL,
     email VARCHAR(100) NOT NULL,
-    senha VARCHAR(255) NOT NULL,
+    senha VARCHAR(255) NOT NULL, -- colocar UNIQUE AQUI NA SENHA
     classificacao ENUM('admin','editor') NOT NULL
 );
 ```
@@ -34,6 +34,7 @@ CREATE TABLE noticias(
     imagem VARCHAR(50) NOT NULL,
     data DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     
+    -- FK APONTA/REFERENCIA /ESTÁ-LIGADA-À PK DE OUTRA TABELA
     usuario_id INT NOT NULL,
 
     FOREIGN KEY (usuario_id) REFERENCES usuarios(id)
