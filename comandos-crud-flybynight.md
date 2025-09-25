@@ -151,12 +151,19 @@ WHERE fornecedor_id = 4;
 
 SELECT 
 
+
+-- Nomes das Colunas/Campos precedidos do nome das tabelas correspondentes 
 produtos.nome, 
 produtos.descricao, 
 fornecedores.nome 
 
+-- Indicando as tabelas que serão "juntadas/combinadas/relacionadas"
 FROM produtos JOIN fornecedores 
+
+-- Regra de junção baseada nas chaves (estrangeira e primária)
 ON produtos.fornecedor_id = fornecedores.id
+
+-- Condição pra essa consulta (produtos do fornecedor livraria)
 WHERE produtos.fornecedor_id =4; -- OU fornecedor.id = 4
 
 ```
