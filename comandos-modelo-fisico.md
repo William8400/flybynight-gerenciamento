@@ -21,7 +21,7 @@ CREATE TABLE produtos(
     id INT PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(100) NOT NULL,
     descricao TEXT NULL,
-    preco DECIMAL(10.2) NOT NULL,
+    preco DECIMAL(10,2) NOT NULL,
     quantidade INT NOT NULL,
 
     -- Aqui, criamos fornecedor_id como uma coluna/campo comum 
