@@ -5,6 +5,6 @@
 
 INSERT INTO fornecedores (nome) VALUES ('Eletrônicos Tabajara');
 
-
+-- mysql_start.bat
 
 ```
