@@ -8,8 +8,9 @@ $fornecedores = buscarFornecedores($conexao);
 
 
 // Testando a exibição dos dados (só para o programador[a])
+// echo "<pre>";
 // var_dump($fornecedores);
-
+// echo "</pre>";
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -41,8 +42,8 @@ $fornecedores = buscarFornecedores($conexao);
         <?php foreach ($fornecedores as $fornecedor) { // ou : ?>
 
             <tr>
-                <td>Aqui vem o ID...</td>
-                <td>Aqui vem o nome</td>
+                <td><?=$fornecedor['id']?></td>
+                <td><?=$fornecedor['nome']?></td>
             </tr>
 
         <?php } // ou endforeach; ?>
