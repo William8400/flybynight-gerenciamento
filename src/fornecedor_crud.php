@@ -10,13 +10,30 @@ require_once "../conecta.php";
 /* Retornará um array associativo com os fornecedores*/
 function buscarFornecedores($conexao){
     // Montamos o comando SQL  para a consulta 
-    $sql = "SELECT * FROM fornecedores";
+    $sql = "SELECT * FROM fornecedores ORDER BY nome";
 
     // Executamos o comando e guardamos o resultado da consulta 
     $consulta = $conexao->query($sql);
 
     // Retornamos o resultado em formato de Array Associativo
     return $consulta->fetchAll();
+}
+
+/* Recebe o nome de um novo fornecedor e insere no BD */
+function inserirFornecedor($conexao, $nome){
+    /* Montando o comando SQL de INSERT  e aplicando um "named parameter (parâmetro nomeado)". 
+    Um parâmetro nomeado nada mais é do que reservar um espaço para atribuir um valor ao comando.
+    */
+    $sql = "INSERT INTO fornecedores (nome) VALUES(:nome)";
+
+    // prepare o comando acima ANTES de executar no BD
+    $consulta = $conexao->prepare($sql); 
+
+    // Anexar/atrelar/colocar um valor
+    $consulta->bindValue(":nome", $nome);
+
+    // Executamos a consulta com o comando e o valor 
+    $consulta->execute();
 }
 
 
