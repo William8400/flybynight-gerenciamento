@@ -1,7 +1,16 @@
 <?php
+require_once "../src/fornecedor_crud.php";
+
 // Pegando da url o valor do parâmetro chamado id
 $id = $_GET['id'];
 
+// Chamamos a função, passando dados de conexão e o id do fornecedor a ser buscado
+$fornecedor = buscarFornecedorPorid($conexao, $id);
+
+// o comando <pre> organiza o array na tela
+/* echo "<pre>";
+var_dump($fornecedor);
+echo "</pre"; */
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -16,10 +25,11 @@ $id = $_GET['id'];
 <h1>Editar fornecedor</h1>
 
 <form action="" method="post">
-
+    <!-- Sempre coloque o código/id do registro de forma oculta no formulário -->
+    <input type="hidden" name="id" value="<?=$fornecedor['id']?>">
     <div>
         <label for="nome">Nome:</label>
-        <input type="text" name="nome" id="nome" required>
+        <input value="<?=$fornecedor['nome']?>" type="text" name="nome" id="nome" required>
     </div>
     <button type="submit">Atualizar</button>
 </form>
