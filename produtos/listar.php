@@ -34,8 +34,6 @@
             </td>
         </tr>
 
-
-
     </table>
 
     <script src="../js/confirmar-exclusao.js"></script>
