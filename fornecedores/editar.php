@@ -7,6 +7,17 @@ $id = $_GET['id'];
 // Chamamos a função, passando dados de conexão e o id do fornecedor a ser buscado
 $fornecedor = buscarFornecedorPorid($conexao, $id);
 
+if( $_SERVER['REQUEST_METHOD'] === 'POST'){
+    $nome = $_POST['nome'];
+    atualizarFornecedor($conexao, $nome, $id);
+
+    // Após redirecionar usando header()...
+    header("location:listar.php");
+
+    // ... sempre encerre/interrompa o script (evitando erros/execuções adicionais)
+    exit;
+}
+
 // o comando <pre> organiza o array na tela
 /* echo "<pre>";
 var_dump($fornecedor);
