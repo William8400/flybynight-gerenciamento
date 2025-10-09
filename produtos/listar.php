@@ -24,10 +24,10 @@
             <th>Ações</th>
         </tr>
         <tr>
-            <td>  </td>
-            <td>  </td>
-            <td>  </td>
-            <td>  </td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
             <td>
                 <a href="editar.php">Editar</a>
                 <a class="excluir" href="excluir.php">Excluir</a>
