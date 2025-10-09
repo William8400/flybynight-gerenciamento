@@ -40,7 +40,16 @@ $fornecedores = buscarFornecedores($conexao);
     <div>
         <label for="fornecedor">Fornecedor:</label>
         <select name="fornecedor" id="fornecedor">
+            <!-- Sempre mantenha um option vazio.
+             É o usuário que deve vir aqui escolher.-->
             <option value=""></option>
+
+        <?php foreach($fornecedores as $fornecedor): ?>
+            
+            <option value="<?=$fornecedor['id']?>"><?=$fornecedor['nome']?></option>
+            
+        <?php endforeach; ?>
+
         </select>
     </div>
 
