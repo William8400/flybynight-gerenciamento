@@ -1,7 +1,21 @@
 <?php
 
 require_once "../src/fornecedor_crud.php";
+require_once "../src/produto_crud.php";
 $fornecedores = buscarFornecedores($conexao);
+
+if($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $nome = $_POST['nome'];
+    $descricao = $_POST['descricao'];
+    $preco = $_POST['preco'];
+    $quantidade = $_POST['quantidade'];
+    $fornecedor_id = $_POST['fornecedor'];
+
+    inserirProduto($conexao, $nome, $descricao, $preco, $quantidade, $fornecedor_id);
+
+    header("location:listar.php");
+    exit;
+}
 
 
 
@@ -46,7 +60,7 @@ $fornecedores = buscarFornecedores($conexao);
 
         <?php foreach($fornecedores as $fornecedor): ?>
             
-            <option value="<?=$fornecedor['id']?>"><?=$fornecedor['nome']?></option>
+            <option value="<?=$fornecedor['id']?>"><?=$fornecedor['nome']?> <?=$fornecedor['id']?></option>
             
         <?php endforeach; ?>
 
