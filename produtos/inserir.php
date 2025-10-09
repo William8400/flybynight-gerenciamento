@@ -49,7 +49,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
     </div>
     <div>
         <label for="quantidade">quantidade:</label>
-        <input type="number" name="quantidade" id="quantidade" require min="0" step="0.01">
+        <input type="number" name="quantidade" id="quantidade" require min="0" >
     </div>
     <div>
         <label for="fornecedor">Fornecedor:</label>

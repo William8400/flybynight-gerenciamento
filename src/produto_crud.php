@@ -23,7 +23,7 @@ function buscarProdutos($conexao)
 function inserirProduto($conexao, $nome, $descricao, $preco, $quantidade, $fornecedor_id)
 {
     
-        $sql = "INSERT INTO produtos(nome, descricao, preco, quantidade fornecedor)
+        $sql = "INSERT INTO produtos(nome, descricao, preco, quantidade, fornecedor_id)
         VALUES (:nome, :descricao, :preco, :quantidade, :fornecedor)";
 
         $consulta = $conexao->prepare($sql);
@@ -32,8 +32,17 @@ function inserirProduto($conexao, $nome, $descricao, $preco, $quantidade, $forne
         $consulta->bindValue(":descricao", $descricao);
         $consulta->bindValue(":preco", $preco);
         $consulta->bindValue(":quantidade", $quantidade);
-        $consulta->bindValue(":fornecedor_id", $fornecedor_id);
+        $consulta->bindValue(":fornecedor", $fornecedor_id);
 
         $consulta->execute();
     
+}
+
+
+function excluirProduto($conexao, $nome, $descricao, $preco, $quantidade, $fornecedor_id){
+     $sql = "DELETE FROM produtos 
+    WHERE nome = :nome";
+    $consulta = $conexao->prepare($sql);
+    $consulta->bindValue(':nome', $nome);
+    $consulta->execute();
 }
