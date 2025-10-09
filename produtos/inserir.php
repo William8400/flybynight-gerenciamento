@@ -1,14 +1,22 @@
+<?php
+
+require_once "../src/fornecedor_crud.php";
+$fornecedores = buscarFornecedores($conexao);
+
+
+
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inserir Fornecedor</title>
+    <title>Inserir produto</title>
     <link rel="stylesheet" href="../css/estilos.css">
 </head>
 <body>
     
-<h1>Adicionando um novo fornecedor</h1>
+<h1>Adicionando um novo produto</h1>
 
 <form action="" method="post">
 
@@ -16,6 +24,26 @@
         <label for="nome">Nome:</label>
         <input type="text" name="nome" id="nome" required>
     </div>
+    <div>
+        <label for="descricao">Descrição:</label>
+        <textarea name="descricao" id="descricao" rows="6"></textarea>
+    </div>
+      <div>
+        <label for="preco">preço:</label>
+        <input type="number" name="preco" id="preco" require min="0" step="0.01">
+        
+    </div>
+    <div>
+        <label for="quantidade">quantidade:</label>
+        <input type="number" name="quantidade" id="quantidade" require min="0" step="0.01">
+    </div>
+    <div>
+        <label for="fornecedor">Fornecedor:</label>
+        <select name="fornecedor" id="fornecedor">
+            <option value=""></option>
+        </select>
+    </div>
+
     <button type="submit">Salvar</button>
 </form>
 
