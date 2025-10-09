@@ -33,17 +33,17 @@ $produtos = buscarProdutos($conexao);
             <th>Ações</th>
         </tr>
         <tr>
- <?php foreach($produtos as $produto): ?>            
-            <td> <?=$produto['nome_produto']?></td>
-            <td><?=$produto['preco']?></td>
-            <td><?=$produto['quantidade']?></td>
-            <td><?=$produto['nome_fornecedor']?></td>
-            <td>
-                <a href="editar.php">Editar</a>
-                <a class="excluir" href="excluir.php">Excluir</a>
-            </td>
+            <?php foreach ($produtos as $produto): ?>
+                <td> <?= $produto['nome_produto'] ?></td>
+                <td><?= $produto['preco'] ?></td>
+                <td><?= $produto['quantidade'] ?></td>
+                <td><?= $produto['nome_fornecedor'] ?></td>
+                <td>
+                    <a href="editar.php">Editar</a>
+                    <a class="excluir" href="excluir.php">Excluir</a>
+                </td>
         </tr>
-<?php endforeach; ?>
+    <?php endforeach; ?>
     </table>
 
     <script src="../js/confirmar-exclusao.js"></script>
