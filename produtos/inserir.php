@@ -9,7 +9,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
     $descricao = $_POST['descricao'];
     $preco = $_POST['preco'];
     $quantidade = $_POST['quantidade'];
-    $fornecedor_id = $_POST['fornecedor'];
+    $fornecedor_id = $_POST['fornecedor']; 
 
     inserirProduto($conexao, $nome, $descricao, $preco, $quantidade, $fornecedor_id);
 
