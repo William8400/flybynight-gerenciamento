@@ -39,6 +39,7 @@ $produtos = buscarProdutos($conexao);
                 <td><?= $produto['quantidade'] ?></td>
                 <td><?= $produto['nome_fornecedor'] ?></td>
                 <td>
+                    <!-- criando link dinâmico para editar -->
                     <a href="editar.php?id=<?=$produto["id"]?>">Editar</a>
                     <a class="excluir" href="excluir.php">Excluir</a>
                 </td>

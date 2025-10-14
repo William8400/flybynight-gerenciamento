@@ -39,10 +39,14 @@ function inserirProduto($conexao, $nome, $descricao, $preco, $quantidade, $forne
 }
 
 
-function excluirProduto($conexao, $nome, $descricao, $preco, $quantidade, $fornecedor_id){
-     $sql = "DELETE FROM produtos 
-    WHERE nome = :nome";
+function buscarProdutoPorId($conexao, $id ){
+    $sql = "SELECT * FROM produtos WHERE id = :id";
+    // sempre que tiver parâmetros a mais se usa prepare
     $consulta = $conexao->prepare($sql);
-    $consulta->bindValue(':nome', $nome);
+
+    $consulta->bindValue(":id", $id);
     $consulta->execute();
+
+    return $consulta->fetch(); 
+
 }
