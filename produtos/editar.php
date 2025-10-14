@@ -8,11 +8,15 @@ $id = $_GET['id']; // se ta na url sempre usar o GET
 // agora pegamos a função que criamos e guardar em uma variavel
 
 $produto = buscarProdutoPorid($conexao, $id);
-
-
-
-
 $fornecedores = buscarFornecedores($conexao);
+
+if($_SERVER['REQUEST_METHOD']==='POST'){
+    $nome = $_POST['nome'];
+    $descricao = $_POST['descricao'];
+    $preco = $_POST['preco'];
+    $quantidade = $_POST['quantidade'];
+    $fornecedor_id = $_POST['fornecedor'];
+}
 
 
 ?>

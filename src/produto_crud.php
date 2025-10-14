@@ -47,7 +47,7 @@ function buscarProdutoPorId($conexao, $id ){
     $consulta->bindValue(":id", $id);
     $consulta->execute();
 
-    return $consulta->fetch(); 
+    return $consulta->fetch();  // fetch pega somente uma coisa 
 
 }
 
