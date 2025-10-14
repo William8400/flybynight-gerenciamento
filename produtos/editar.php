@@ -60,8 +60,8 @@ $fornecedores = buscarFornecedores($conexao);
 
                 <?php foreach ($fornecedores as $fornecedor): ?>
 
-                    <!-- Lógica da condicional abaixo é:
-                     Se o ID do fornecedor aqui da lista de opções for IGUAL ao fornecedor do produto que escolhemos editar, então faça com que fique selecionado. Caso contrário, não faça nada  -->
+                    <!--Lógica da condicional abaixo é:
+                     Se o ID do fornecedor aqui da lista de opções for IGUAL ao fornecedor do produto que escolhemos editar, então faça com que fique selecionado. Caso contrário, não faça nada-->
                     <option value="<?= $fornecedor['id'] ?>"
                     <?=$fornecedor['id'] === $produto['fornecedor_id'] ? 'selected' : ''?>
 
