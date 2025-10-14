@@ -1,3 +1,10 @@
+<?php
+require_once "../src/fornecedor_crud.php";
+
+$fornecedores = buscarFornecedores($conexao);
+
+
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
