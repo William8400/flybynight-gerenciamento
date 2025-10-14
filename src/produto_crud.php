@@ -22,24 +22,24 @@ function buscarProdutos($conexao)
 
 function inserirProduto($conexao, $nome, $descricao, $preco, $quantidade, $fornecedor_id)
 {
-    
-        $sql = "INSERT INTO produtos(nome, descricao, preco, quantidade, fornecedor_id)
+
+    $sql = "INSERT INTO produtos(nome, descricao, preco, quantidade, fornecedor_id)
         VALUES (:nome, :descricao, :preco, :quantidade, :fornecedor)";
 
-        $consulta = $conexao->prepare($sql);
+    $consulta = $conexao->prepare($sql);
 
-        $consulta->bindValue(":nome", $nome);
-        $consulta->bindValue(":descricao", $descricao);
-        $consulta->bindValue(":preco", $preco);
-        $consulta->bindValue(":quantidade", $quantidade);
-        $consulta->bindValue(":fornecedor", $fornecedor_id);
+    $consulta->bindValue(":nome", $nome);
+    $consulta->bindValue(":descricao", $descricao);
+    $consulta->bindValue(":preco", $preco);
+    $consulta->bindValue(":quantidade", $quantidade);
+    $consulta->bindValue(":fornecedor", $fornecedor_id);
 
-        $consulta->execute();
-    
+    $consulta->execute();
 }
 
 
-function buscarProdutoPorId($conexao, $id ){
+function buscarProdutoPorId($conexao, $id)
+{
     $sql = "SELECT * FROM produtos WHERE id = :id";
     // sempre que tiver parâmetros a mais se usa prepare
     $consulta = $conexao->prepare($sql);
@@ -51,21 +51,22 @@ function buscarProdutoPorId($conexao, $id ){
 
 }
 
-function atualizarProduto($conexao, $id, $nome, $descricao, $preco, $quantidade, $fornecedor_id ){
+function atualizarProduto($conexao, $id, $nome, $descricao, $preco, $quantidade, $fornecedor_id)
+{
     $sql = "UPDATE produtos SET 
                    nome = :nome,
                    descricao = :descricao,
                    preco = :preco,
                    quantidade = :quantidade,
-                   fornecedor_id = :fornecedor_id WHERE id = :id "; 
-                   
+                   fornecedor_id = :fornecedor_id WHERE id = :id ";
+
     $consulta = $conexao->prepare($sql);
     $consulta->bindValue(":nome", $nome);
     $consulta->bindValue(":descricao", $descricao);
     $consulta->bindValue(":preco", $preco);
     $consulta->bindValue(":quantidade", $quantidade);
     $consulta->bindValue(":fornecedor_id", $fornecedor_id);
-    $consulta->bindValue("id" , $id);
+    $consulta->bindValue("id", $id);
 
     $consulta->execute();
 }
