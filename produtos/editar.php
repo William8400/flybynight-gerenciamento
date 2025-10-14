@@ -31,25 +31,25 @@ $fornecedores = buscarFornecedores($conexao);
     <h1>Editar produto</h1>
 
     <form action="" method="post">
-        <input type="hidden" name="id" value="?id=<?=$produto["id"]?>">
+        <input type="hidden" name="id" value="?id=<?= $produto["id"] ?>">
 
         <div>
             <label for="nome">Nome:</label>
-            <input value="<?=$produto['nome']?>" type="text" name="nome" id="nome" required>
+            <input value="<?= $produto['nome'] ?>" type="text" name="nome" id="nome" required>
         </div>
         <div>
             <label for="descricao">Descrição:</label>
             <!-- Não dar enter ou identação dentro da tag textarea, pois os espaços vão aparecer se fizer isso. Portanto, deixe tudo na mesma linha -->
-            <textarea name="descricao" id="descricao" rows="6"><?=$produto["descricao"]?></textarea>
+            <textarea name="descricao" id="descricao" rows="6"><?= $produto["descricao"] ?></textarea>
         </div>
         <div>
             <label for="preco">preço:</label>
-            <input value="<?=$produto["preco"]?>" type="number" name="preco" id="preco" require min="0" step="0.01">
+            <input value="<?= $produto["preco"] ?>" type="number" name="preco" id="preco" require min="0" step="0.01">
 
         </div>
         <div>
             <label for="quantidade">quantidade:</label>
-            <input value="<?=$produto["quantidade"]?>" type="number" name="quantidade" id="quantidade" require min="0">
+            <input value="<?= $produto["quantidade"] ?>" type="number" name="quantidade" id="quantidade" require min="0">
         </div>
         <div>
             <label for="fornecedor">Fornecedor:</label>
@@ -60,7 +60,12 @@ $fornecedores = buscarFornecedores($conexao);
 
                 <?php foreach ($fornecedores as $fornecedor): ?>
 
-                    <option value="<?= $fornecedor['id'] ?>"><?= $fornecedor['nome'] ?> <?= $fornecedor['id'] ?></option>
+                    <!-- Lógica da condicional abaixo é:
+                     Se o ID do fornecedor aqui da lista de opções for IGUAL ao fornecedor do produto que escolhemos editar, então faça com que fique selecionado. Caso contrário, não faça nada  -->
+                    <option value="<?= $fornecedor['id'] ?>"
+                    <?=$fornecedor['id'] === $produto['fornecedor_id'] ? 'selected' : ''?>
+
+                    ><?= $fornecedor['nome'] ?> <?= $fornecedor['id'] ?></option>
 
                 <?php endforeach; ?>
 
