@@ -31,23 +31,25 @@ $fornecedores = buscarFornecedores($conexao);
     <h1>Editar produto</h1>
 
     <form action="" method="post">
-        <!-- Sempre coloque o código/id do registro de forma oculta no formulário -->
+        <input type="hidden" name="id" value="?id=<?=$produto["id"]?>">
+
         <div>
             <label for="nome">Nome:</label>
-            <input type="text" name="nome" id="nome" required>
+            <input value="<?=$produto['nome']?>" type="text" name="nome" id="nome" required>
         </div>
         <div>
             <label for="descricao">Descrição:</label>
-            <textarea name="descricao" id="descricao" rows="6"></textarea>
+            <!-- Não dar enter ou identação dentro da tag textarea, pois os espaços vão aparecer se fizer isso. Portanto, deixe tudo na mesma linha -->
+            <textarea name="descricao" id="descricao" rows="6"><?=$produto["descricao"]?></textarea>
         </div>
         <div>
             <label for="preco">preço:</label>
-            <input type="number" name="preco" id="preco" require min="0" step="0.01">
+            <input value="<?=$produto["preco"]?>" type="number" name="preco" id="preco" require min="0" step="0.01">
 
         </div>
         <div>
             <label for="quantidade">quantidade:</label>
-            <input type="number" name="quantidade" id="quantidade" require min="0">
+            <input value="<?=$produto["quantidade"]?>" type="number" name="quantidade" id="quantidade" require min="0">
         </div>
         <div>
             <label for="fornecedor">Fornecedor:</label>
