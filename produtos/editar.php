@@ -1,5 +1,16 @@
 <?php
 require_once "../src/fornecedor_crud.php";
+require_once "../src/produto_crud.php";
+
+// pegando parâmetro que a gente criou do id
+$id = $_GET['id']; // se ta na url sempre usar o GET 
+
+// agora pegamos a função que criamos e guardar em uma variavel
+
+$produto = buscarProdutoPorid($conexao, $id);
+
+
+
 
 $fornecedores = buscarFornecedores($conexao);
 
