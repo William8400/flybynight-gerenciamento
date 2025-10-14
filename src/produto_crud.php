@@ -70,3 +70,13 @@ function atualizarProduto($conexao, $id, $nome, $descricao, $preco, $quantidade,
 
     $consulta->execute();
 }
+
+function excluirProduto($conexao, $id){
+    $sql = "DELETE FROM produtos WHERE id = :id";
+
+    $consulta = $conexao->prepare($sql);
+
+    $consulta->bindValue(":id", $id);
+
+    $consulta->execute();
+}
