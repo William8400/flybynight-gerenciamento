@@ -35,7 +35,7 @@
                 <td>
                     <!-- criando link dinâmico para editar -->
                     <a href="editar.php?id=<?=$Loja["id"]?>">⛏️ Editar</a>
-                    <a class="excluir" href="excluir.php"<?=$Loja['id']?>> ❌ Excluir</a>
+                    <a class="excluir"href="excluir.php?id=<?=$Loja['id']?>"> ❌ Excluir</a>
                 </td>
         </tr>
     <?php endforeach; ?>
