@@ -1,3 +1,10 @@
+<?php
+   require_once "../src/loja_crud.php";
+
+   $Lojas = buscarLojas($conexao);
+
+
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -27,8 +34,8 @@
                 <td> <?= $Loja['nome'] ?></td>
                 <td>
                     <!-- criando link dinâmico para editar -->
-                    <a href="editar.php?id=<?=$Loja["id"]?>">Editar</a>
-                    <a class="excluir" href="excluir.php"<?=$Loja['id']?>>Excluir</a>
+                    <a href="editar.php?id=<?=$Loja["id"]?>">⛏️ Editar</a>
+                    <a class="excluir" href="excluir.php"<?=$Loja['id']?>> ❌ Excluir</a>
                 </td>
         </tr>
     <?php endforeach; ?>
