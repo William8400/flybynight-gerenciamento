@@ -1,9 +1,19 @@
 <?php
 require_once "../src/loja_crud.php";
 
+$id = $_GET['id'];
 
+$lojas = buscarLojasPorId($conexao, $id);
 
+if($_SERVER['REQUEST_METHOD'] === 'POST'){
+    
+    $nome = $_POST['nome'];
+    atualizarLoja($conexao, $nome , $id);
 
+    header('location:listar.php');
+
+    exit;
+}
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">

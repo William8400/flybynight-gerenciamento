@@ -16,7 +16,28 @@ function inserirLoja($conexao, $nome){
 
     $consulta = $conexao->prepare($sql);
 
-    $consulta->bindeValue(":nome", $nome);
+    $consulta->bindValue(":nome", $nome);
+
+    $consulta->execute();
+}
+
+function buscarLojasPorId($conexao, $id){
+    $sql = "SELECT * FROM lojas WHERE id = :id";
+
+    $consulta = $conexao->prepare($sql);
+    $consulta->bindValue(':id', $id);
+    $consulta->execute();
+
+    return $consulta->fetch();
+}
+
+function atualizarLoja($conexao, $nome, $id){
+    $sql = "UPDATE lojas SET nome = :nome  WHERE id = :id";
+
+    $consulta = $conexao->prepare($sql);
+
+    $consulta->bindValue(":nome", $nome);
+    $consulta->bindValue(":id", $id);
 
     $consulta->execute();
 }
