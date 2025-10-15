@@ -1,27 +1,9 @@
 <?php
-require_once "../src/fornecedor_crud.php";
-require_once "../src/produto_crud.php";
+require_once "../src/loja_crud.php";
 
-// pegando parâmetro que a gente criou do id
-$id = $_GET['id']; // se ta na url sempre usar o GET 
 
-// agora pegamos a função que criamos e guardar em uma variavel
 
-$produto = buscarProdutoPorid($conexao, $id);
-$fornecedores = buscarFornecedores($conexao);
 
-if($_SERVER['REQUEST_METHOD']==='POST'){
-    $nome = $_POST['nome'];
-    $descricao = $_POST['descricao'];
-    $preco = $_POST['preco'];
-    $quantidade = $_POST['quantidade'];
-    $fornecedor_id = $_POST['fornecedor'];
-
-    atualizarProduto($conexao, $id, $nome, $descricao, $preco, $quantidade, $fornecedor_id);
-
-    header("location:listar.php");
-    exit;
-}
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -29,54 +11,20 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editar produto</title>
+    <title>Editar lojas</title>
     <link rel="stylesheet" href="../css/estilos.css">
 </head>
 
 <body>
 
-    <h1>Editar produto</h1>
+    <h1>Editar lojas</h1>
 
     <form action="" method="post">
-        <input type="hidden" name="id" value="?id=<?= $produto["id"] ?>">
+        <input type="hidden" name="id" value="?id=<?= $lojas["id"] ?>">
 
         <div>
             <label for="nome">Nome:</label>
-            <input value="<?= $produto['nome'] ?>" type="text" name="nome" id="nome" required>
-        </div>
-        <div>
-            <label for="descricao">Descrição:</label>
-            <!-- Não dar enter ou identação dentro da tag textarea, pois os espaços vão aparecer se fizer isso. Portanto, deixe tudo na mesma linha -->
-            <textarea name="descricao" id="descricao" rows="6"><?= $produto["descricao"] ?></textarea>
-        </div>
-        <div>
-            <label for="preco">preço:</label>
-            <input value="<?= $produto["preco"] ?>" type="number" name="preco" id="preco" require min="0" step="0.01">
-
-        </div>
-        <div>
-            <label for="quantidade">quantidade:</label>
-            <input value="<?= $produto["quantidade"] ?>" type="number" name="quantidade" id="quantidade" require min="0">
-        </div>
-        <div>
-            <label for="fornecedor">Fornecedor:</label>
-            <select name="fornecedor" id="fornecedor">
-                <!-- Sempre mantenha um option vazio.
-             É o usuário que deve vir aqui escolher.-->
-                <option value=""></option>
-
-                <?php foreach ($fornecedores as $fornecedor): ?>
-
-                    <!--Lógica da condicional abaixo é:
-                     Se o ID do fornecedor aqui da lista de opções for IGUAL ao fornecedor do produto que escolhemos editar, então faça com que fique selecionado. Caso contrário, não faça nada-->
-                    <option value="<?= $fornecedor['id'] ?>"
-                    <?=$fornecedor['id'] === $produto['fornecedor_id'] ? 'selected' : ''?>
-
-                    ><?= $fornecedor['nome'] ?> <?= $fornecedor['id'] ?></option>
-
-                <?php endforeach; ?>
-
-            </select>
+            <input value="<?= $lojas['nome'] ?>" type="text" name="nome" id="nome" required>
         </div>
         <button type="submit">Atualizar</button>
     </form>

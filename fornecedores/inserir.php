@@ -13,11 +13,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
     header("location:listar.php");
     exit;
 }
-
-
-
 ?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>

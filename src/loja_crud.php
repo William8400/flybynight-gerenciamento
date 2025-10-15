@@ -10,4 +10,14 @@ function buscarLojas($conexao){
 
     return $consulta->fetchAll();
 }
+
+function inserirLoja($conexao, $nome){
+    $sql = "INSERT INTO lojas (nome) VALUES(:nome)";
+
+    $consulta = $conexao->prepare($sql);
+
+    $consulta->bindeValue(":nome", $nome);
+
+    $consulta->execute();
+}
 ?>
