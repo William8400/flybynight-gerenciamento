@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 01/10/2025 às 22:26
+-- Tempo de geração: 15/10/2025 às 21:16
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -60,7 +60,7 @@ CREATE TABLE `lojas` (
 
 INSERT INTO `lojas` (`id`, `nome`) VALUES
 (1, 'Casas Bahia'),
-(2, 'Shopping Zona Leste'),
+(2, 'Shopping ARICANDUVA'),
 (3, 'Bazar das Coisas'),
 (4, 'Americanas');
 
@@ -110,7 +110,9 @@ INSERT INTO `produtos` (`id`, `nome`, `descricao`, `preco`, `quantidade`, `forne
 (2, 'TV Led', 'Tela de 50 polegadas, 4K , 4 entradas HDMI e etc e tal', 3420.00, 12, 1),
 (3, 'Senhor dos Anéis: As Duas Torres', 'Volume 2 da série de livros criados pelo autor J.R.R Tolkien', 125.00, 100, 4),
 (5, 'Ghost Rider ', 'Livro contando a história de vida do Nell Peart...', 125.00, 60, 4),
-(6, 'Senhor dos Anéis: A Sociedade do Anel', 'Primeiro livro da saga Senhor dos Anéis', 125.00, 32, 4);
+(6, 'Senhor dos Anéis: A Sociedade do Anel', 'Primeiro livro da saga Senhor dos Anéis', 125.00, 32, 4),
+(7, 'Harry Potter e a pedra filosofal', 'Um livro que conta sobre como o jovem Bruxo Harry Potter começou sua trajetória no mundo da mágia', 79.99, 4, 4),
+(8, 'Motorola Android ', 'um celular de alta qualidade...', 1200.86, 7, 1);
 
 --
 -- Índices para tabelas despejadas
@@ -150,19 +152,19 @@ ALTER TABLE `produtos`
 -- AUTO_INCREMENT de tabela `fornecedores`
 --
 ALTER TABLE `fornecedores`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT de tabela `lojas`
 --
 ALTER TABLE `lojas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de tabela `produtos`
 --
 ALTER TABLE `produtos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Restrições para tabelas despejadas
