@@ -20,7 +20,7 @@ $produtos = buscarProdutos($conexao);
 <body>
 
     <h1>Produtos</h1>
-    <a href="inserir.php"> + Novo produto</a>
+    <a href="inserir.php"> ➕ Novo produto</a>
     <a href="../index.php"> 👈 Voltar</a>
 
     <table>

@@ -18,7 +18,7 @@
 <body>
 
     <h1>Lojas</h1>
-    <a href="inserir.php"> + Nova Loja</a>
+    <a href="inserir.php"> ➕ Nova Loja</a>
     <a href="../index.php"> 👈 Voltar</a>
 
     <table>
