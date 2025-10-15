@@ -41,4 +41,14 @@ function atualizarLoja($conexao, $nome, $id){
 
     $consulta->execute();
 }
+
+function excluirLoja($conexao, $id){
+    $sql = "DELETE FROM lojas WHERE id = :id";
+
+    $consulta = $conexao->prepare($sql); 
+
+    $consulta->bindValue(':id', $id);
+
+    $consulta->execute();
+}
 ?>
