@@ -16,7 +16,7 @@
         <li><a href="fornecedores/listar.php"> Fornecedores</a></li>
         <li><a href="produtos/listar.php"> Produtos</a></li>
         <li><a href="lojas/listar.php">Lojas</a></li>
-        <li><a href=""></a>Estoque de Lojas e Produtos</li>
+        <li><a href="estoque/listar.php">Estoque (Lojas e Produtos)</a></li>
 
     </ul>
 
