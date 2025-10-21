@@ -12,7 +12,7 @@ function buscarProdutos($conexao)
             fornecedores.nome AS nome_fornecedor
             FROM produtos JOIN fornecedores 
             ON fornecedores.id = produtos.fornecedor_id
-                -- tabela -- PK  --tabela       -- FK
+                -- tabela -- PK  --tabela-- FK
             ORDER BY produtos.nome
             ";
 
